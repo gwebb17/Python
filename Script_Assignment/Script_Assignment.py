@@ -1,11 +1,17 @@
 import os
 import time
 
+source = 'C:/Users/Machine/Documents/GitHub/Python/Script_Assignment/'
+files = os.listdir(source)
 
-#print directory files
-for x in os.listdir():
+#print directory files this is the more efficient way of doing below hardcode in one block
+#the below block achieves the basic goal without hardcoding
+for x in files:
     if x.endswith(".txt"):
-        print(x)
+        print(os.path.join(source, x))
+        path = os.path.join(source, x)
+        mTime = os.path.getmtime(path)
+        print(x + " modtime: " + str(mTime))#str converts float modtime to string can't use floats
 
 #join to absolute path name
 pathA = 'test_file1.txt'
