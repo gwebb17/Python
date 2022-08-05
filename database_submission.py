@@ -13,7 +13,7 @@ with conn:
     conn.commit()
 conn.close()
 
-
+"""
 #reconnect and insert data
 conn = sqlite3.connect('DB_Assignment.db')
 with conn:
@@ -21,16 +21,32 @@ with conn:
     cur.execute("INSERT INTO table_assignment(file_name) VALUES ('Hello.txt')")
     cur.execute("INSERT INTO table_assignment(file_name) VALUES ('World.txt')")
     conn.commit()
-conn.close()
+conn.close()"""
 
 #list to pull from 
 fileList = ('information.docx', 'Hello.txt', 'myImage.png', \
             'myMovie.mpg', 'World.txt', 'data.pdf', 'myPhoto.jpg')
 
-#reconnect using endswith instead of SELECT
+
+
 for x in fileList:
     if x.endswith(".txt"):
-        print(x)
+        conn = sqlite3.connect('DB_Assignment.db')
+        with conn:
+            cur = conn.cursor()
+            cur.execute("INSERT INTO table_assignment(file_name) VALUES (?)", (x,))
+            conn.commit()
+        conn.close()
+            
+conn = sqlite3.connect('DB_Assignment.db')
+with conn:
+    cur = conn.cursor() #must be put before any statement including cur.
+    cur.execute("SELECT file_name FROM table_assignment")
+    varStorage = cur.fetchall() #this now retrieves the result from above SELECT statement
+    for item in varStorage:
+        displayVar = "The following files have been found with the .txt extension: {}.".format(item)
+        print(displayVar)
+conn.close() #math indentation with intial with 
 
 """#reconnect and print qualifying files
 conn = sqlite3.connect('DB_Assignment.db')
