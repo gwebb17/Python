@@ -34,7 +34,7 @@ for x in fileList:
         conn = sqlite3.connect('DB_Assignment.db')
         with conn:
             cur = conn.cursor()
-            cur.execute("INSERT INTO table_assignment(file_name) VALUES (?)", (x,))
+            cur.execute("INSERT INTO table_assignment(file_name) VALUES (?)", (x,))#the ? tells python that this is where the variable will go (x)
             conn.commit()
         conn.close()
             
