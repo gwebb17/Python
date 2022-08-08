@@ -42,8 +42,8 @@ class Roland(Piano):
 if __name__ == "__main__":
     kawai = Kawai()  #create object/instance of Kawai class 
     print(kawai.getInfo())
-    print(kawai.getInfoK())
+    kawai.getInfoK()
     roland = Roland() #create object/instance of Roland class
     print(roland.getInfo())
-    print(roland.getInfoR())
+    roland.getInfoR()
     
