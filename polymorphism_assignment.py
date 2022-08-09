@@ -16,7 +16,7 @@ class Kawai(Piano):
     Digital = "digital"
     Midi = "MIDI"
     #child class 1 method demonstrating polymorphism
-    def getInfoK(self):
+    def getInfo(self):
         displayK = input("Are you interested in learning more about Kawai pianos? (Y/N)")
         if (displayK == "Y"):
             print("The {} {} is {} and has {} capabilities".format(self.Make,self.Model,self.Digital,self.Midi))
@@ -30,7 +30,7 @@ class Roland(Piano):
     Weight = "47 lbs"
     Serial = 344888902
     #child class 2 method
-    def getInfoR(self):
+    def getInfo(self):
         displayR = input("How about Roland pianos? (Y/N)")
         if (displayR == "Y"):
             print("The {} {} is only {}, here's the reference serial #: {}".format(self.Make,self.Model,self.Weight,self.Serial))
@@ -41,9 +41,7 @@ class Roland(Piano):
 
 if __name__ == "__main__":
     kawai = Kawai()  #create object/instance of Kawai class 
-    print(kawai.getInfo())
-    kawai.getInfoK()
+    kawai.getInfo()
     roland = Roland() #create object/instance of Roland class
-    print(roland.getInfo())
-    roland.getInfoR()
+    roland.getInfo()
     
