@@ -29,6 +29,8 @@ coffeeObj.printProVar(10)
 #now __pounds = 10 so the function printPrvVar now displays 10
 coffeeObj.printPrvVar()
 
-
+#changing __pounds value again and displaying again new value
+coffeeObj.printProVar(4)
+coffeeObj.printPrvVar()
 
    
