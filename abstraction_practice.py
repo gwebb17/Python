@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod #syntax anytime you use abstract methods
 
 
 #parent class
-class Rocks:
+class Rocks(ABC):
     def RockType(self):
         kind = input("What kind of rock do you have? ")
         print("This is a {} rock.".format(kind))
@@ -29,12 +29,15 @@ class Saphires(Rocks):
             print("Find a bigger rock")
             #above comparison statement doesn't work using "return"
     
-#create instance of Rock object
-rockOne = Rocks()
+#create instance of Rock object. cant use the abstract class directly(ABC) instead use
+#inherited child class to build object, then we can use function
+#because its defined in that class
+rockOne = Saphires()
 #now we can use its functions
 rockOne.RockType()
 
 #create instance of child class object
 rockTwo = Saphires()
+
 #use previously undefined method that is now defined within this class
 rockTwo.RockWeight()
