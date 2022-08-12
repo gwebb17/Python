@@ -41,3 +41,4 @@ rockTwo = Saphires()
 
 #use previously undefined method that is now defined within this class
 rockTwo.RockWeight()
+rockTwo.RockType()
