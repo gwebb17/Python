@@ -14,7 +14,7 @@ class ParentWindow(Frame):
         self.custom_entryLabel = tk.Label(self.master, text='Enter custom text or click the Default HTML page button')
         self.custom_entryLabel.grid(row=0,column=0)
         #entry
-        self.custom_entry = tk.Entry(self.master, text='', width=100)  #trying to save text as var like textvariable=userText
+        self.custom_entry = tk.Entry(self.master, width=100)  #define entry as variable self.custom_entry to use later below
         self.custom_entry.grid(row=1, padx=(10,10) , pady=(10,10))
 
 
@@ -37,11 +37,10 @@ class ParentWindow(Frame):
 
    
     def customTextFunc(self):
-        userText = tk.StringVar(self.master, tk.Entry)   #define window that is assoc with Entry/parent window
-        convUserText = userText.get()
-        htmlText = convUserText
+        htmlText = self.custom_entry.get() #we need to use our prev defined varname self.custom entry instead of userText
+        #htmlText = convUserText not necessary
         htmlFile = open("index.html", "w")
-        htmlContent = "<html>\n<body>\n<h1>" + convUserText + "</h1>\n</body>\n</html>"
+        htmlContent = "<html>\n<body>\n<h1>" + htmlText + "</h1>\n</body>\n</html>"
         htmlFile.write(htmlContent)
         htmlFile.close()
         webbrowser.open_new_tab("index.html")
