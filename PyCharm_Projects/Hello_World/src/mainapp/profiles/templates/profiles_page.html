@@ -3,11 +3,22 @@
 {% block header %} Welcome to the Practical Practice site {% endblock %}
 
 {% block content %}
-lots of miscellaneous words and combinations of words to be (hopefully) inserted into the correct spot
 
-{% for profile in profiles %}
-    <ul>
-        <li>{{ profile.First_name }}</li>
-    </ul>
-{% endfor %}
+<div class="admin_panel">
+    <form name="profileForm" method="POST" action="">
+        <div class="formObject">
+            {% csrf_token %}
+            <label for="profile_id">Select a user profile:</label>
+            <select id="profile_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex.value]";>
+            {% for profile in profiles %}
+                <option value="../{{ profile.pk }}/details">{{ profile.First_name }}</option>
+            {% endfor %}
+            </select>
+            <div class="fromBtn_container">
+                <a href=""><button type="button" class="btn">Create New Profile</button></a>
+            </div>
+        </div>
+    </form>
+</div>
+
 {% endblock %}
