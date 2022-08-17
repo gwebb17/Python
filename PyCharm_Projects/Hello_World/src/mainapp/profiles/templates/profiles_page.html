@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} Hello_World Practice Title {% endblock %}
+{% block header %} Welcome to the Practical Practice site {% endblock %}
+
+{% block content %}
+lots of miscellaneous words and combinations of words to be (hopefully) inserted into the correct spot
+
+{% for profile in profiles %}
+    <ul>
+        <li>{{ profile.First_name }}</li>
+    </ul>
+{% endfor %}
+{% endblock %}
