@@ -6,6 +6,4 @@ def home(request):
     context = {
         'compNames': compNames,
     }
-
-
     return render(request, "home.html", context)

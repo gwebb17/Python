@@ -14,8 +14,8 @@
                 <option value="../{{ profile.pk }}/details/">{{ profile.First_name }}</option>
             {% endfor %}
             </select>
-            <div class="fromBtn_container">
-                <a href=""><button type="button" class="btn">Create New Profile</button></a>
+            <div class="frmBtn_container">
+                <a href="{% url 'createRecord' %}"><button type="button" class="btn">Create New Profile</button></a>
             </div>
         </div>
     </form>
