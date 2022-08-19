@@ -8,5 +8,5 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin_console', views.admin_console, name='admin_console'),
-    path('<int:pk>/details/)', views.details, name='details'),
+    path('<int:pk>/details/', views.details, name='details'),
 ]

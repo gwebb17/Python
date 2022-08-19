@@ -6,6 +6,7 @@ from .forms import ProfileForm
 # Create your views here.
 def admin_console(request):
     profiles = Profile.objects.all()
+    print("Hello")
     return render(request, 'profiles_page.html', {'profiles': profiles})
 
 
@@ -21,4 +22,4 @@ def details(request, pk):
         else:
             print(form.errors)
     else:
-        return render(request, 'present_profiles.html', {'form': form})
+        return render(request, 'templates/present_profiles.html', {'form': form})

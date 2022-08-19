@@ -24,7 +24,7 @@ from django.conf.urls import include
 urlpatterns = [
     path('', views.home, name="greeting"),
     path('admin/', admin.site.urls),
-    path('', include('profiles.urls'))
+    path('', include('profiles.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
