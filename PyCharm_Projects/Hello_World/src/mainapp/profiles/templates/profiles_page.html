@@ -9,9 +9,9 @@
         <div class="formObject">
             {% csrf_token %}
             <label for="profile_id">Select a user profile:</label>
-            <select id="profile_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex.value]";>
+            <select id="profile_id" name="menu" onChange="top.location.href=this.options[this.selectedIndex].value;">
             {% for profile in profiles %}
-                <option value="../{{ profile.pk }}/details">{{ profile.First_name }}</option>
+                <option value="../{{ profile.pk }}/details/">{{ profile.First_name }}</option>
             {% endfor %}
             </select>
             <div class="fromBtn_container">
