@@ -47,5 +47,5 @@ def transaction(request):
             form.save()
             return balance(request, pk)
     #might need to be uncommented below
-    #content = {'form': form}
-    #return render(request, 'checkbook/AddTransaction.html', content)
+    content = {'form': form}
+    return render(request, 'checkbook/AddTransaction.html', content)
